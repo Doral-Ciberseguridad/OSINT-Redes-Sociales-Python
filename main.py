@@ -1,26 +1,20 @@
-# AUTOR DEL SCRIPT: ALEJANDRO DORAL
-# Este es un script para buscar información de usuarios, crear un informe de las URLs
-# Espero que os sirva o al menos que lo entendáis
-
+# Importo librerias necesarias
 import requests as requests  # Librería para las solicitudes
 import time  # Librería para tiempo de espera en la consola
 from colorama import Fore  # Librería para el tipo de color de la salida en la consola
 import webbrowser  # Para abrir páginas web
 import whois  # Para obtener información de las páginas web
 
-# Bienvenida
+# Mensaje Bienvenida
 time.sleep(2)
-print("\n\nBienvenido al programa Doral_OSINT")
+print("\n\nBienvenido al programa")
 print("En este programa investigaremos a usuarios en las redes sociales\n")
 
-# Parámetros necesarios
-
-# Usuario
 usuario = input("Dime el nombre del usuario que deseas investigar --->")
 print("\n")
 time.sleep(2)
 
-# Opciones a elegir
+# Muestro al usuario las opciones para elegir
 print(f"Elige una de estas opciones para investigar al usuario \"{usuario}\":")
 print("\n")
 time.sleep(2)
@@ -126,7 +120,7 @@ def discord():
         print(Fore.BLUE + "No se encontró al usuario en Discord\n")
         time.sleep(2)
 
-# Ejecutar la función que haya elegido el usuario
+# Ejecuto la función que haya elegido el usuario
 if opcion_usuario == 1:
     instagram()
 elif opcion_usuario == 2:
@@ -147,14 +141,14 @@ else:
     print("\nEsa no es una opción válida, tienes que meter un número del 1 al 6\n")
     time.sleep(2)
 
-# Verificar si el usuario desea buscar en un nuevo sitio
+# Pregunto al usuario si quiere buscar en un nuevo sitio
 print("")
 time.sleep(2)
 print(Fore.WHITE + "¿Hay algún sitio más sobre el que quieras investigar? (SI/NO)\n")
 time.sleep(2)
 respuesta = input("--->")
 
-# Buscar en ese nuevo sitio
+# Busco en ese nuevo sitio
 if respuesta.lower() == "si":
     print("\nMuy bien, indica el sitio.com en el que quieres buscar:")
     sitio_nuevo = input("--->")
@@ -176,14 +170,14 @@ else:
     print(Fore.WHITE + "Esta bien no pasa nada...\n")
     time.sleep(2)
 
-# Mostrar los sitios exitosos
+# Muestro los sitios exitosos
 time.sleep(2)
 print(Fore.WHITE + "")
 print(f"Estas son los sitios en los que se ha encontrado a {usuario}:")
 for plataforma in plataformas_para_whois:
     print(plataforma)
 
-# Generar un informe detallado con WHOIS
+# Genero un informe detallado con WHOIS
 print("\n")
 print("¿Deseas un informe más detallado sobre estos sitios? (SI/NO)")
 respuesta2 = input("--->")
@@ -198,7 +192,7 @@ print("[---75%---]")
 time.sleep(1)
 print("[---100%---]\n")
 time.sleep(1)
-informe_final = ""  # Inicializar el informe
+informe_final = ""  # Inicio el informe
 
 if respuesta2.lower() == "si":
     for plataforma in plataformas_para_whois:
@@ -209,7 +203,7 @@ if respuesta2.lower() == "si":
 else:
     print("Está bien, no pasa nada...")
 
-# Preguntar al usuario si quiere ver el informe
+# Pregunto al usuario si quiere ver el informe
 print("¿Deseas ver el informe? (SI/NO)")
 respuesta3 = input("--->")
 if respuesta3.lower() == "si":
@@ -217,7 +211,7 @@ if respuesta3.lower() == "si":
     print("\n")
     print(informe_final)
 
-# Despedida
-print("Gracias por usar el programa Doral_OSINT!!!\n")
+# M
+print("Gracias por usar el programa!!!\n")
 time.sleep(2)
 
